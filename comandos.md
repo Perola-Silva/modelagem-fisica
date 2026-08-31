@@ -62,3 +62,34 @@ CREATE TABLE lojas_produtos(
     FOREIGN KEY (produto_id) REFERENCES produtos(id) ON DELETE RESTRICT
 );
 ```
+
+---
+
+# Criação da tabela de exemplos para operações estruturais
+
+```sql
+CREATE TABLE exemplos(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NULL
+);
+```
+
+## Usando ALTER TABLE pra alterações estruturais
+
+### Renomeando a tabela
+
+```sql
+ALTER TABLE exemplos RENAME TO clientes;
+```
+
+### Renomeando a coluna
+
+```sql
+ALTER TABLE clientes CHANGE COLUMN nome nome_completo VARCHAR(100) NOT NULL;
+```
+
+### Adicionando coluna
+
+```sql
+ALTER TABLE clientes ADD COLUMN idade INT NOT NULL DEFAULT 0;
+```
