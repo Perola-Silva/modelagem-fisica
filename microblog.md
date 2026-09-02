@@ -1,7 +1,11 @@
 # Microblog
 
 ```sql
-CREATE TABLE usuario(
+CREATE DATABASE microblog CHARACTER SET utf8mb4;
+```
+
+```sql
+CREATE TABLE usuarios(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
@@ -24,10 +28,12 @@ CREATE TABLE noticias(
     resumo VARCHAR(100) NOT NULL,
     texto TEXT NOT NULL,
     imagem VARCHAR(100),
-    data TIMESTAMP NOT NULL,
-    destaque ENUM ('nao','sim')NOT NULL,
+    data TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    destaque ENUM ('nao','sim') NOT NULL,
+    usuario_id INT NOT NULL, 
+    categoria_id INT NOT NULL,
     
-    FOREIGN KEY(usuario_id) REFERENCES usuario(id),
-    FOREIGN KEY(categoria_id) REFERENCES categorias(id)
+    FOREIGN KEY(usuario_id) REFERENCES usuario(id) ON DELETE SET NULL,
+    FOREIGN KEY(categoria_id) REFERENCES categorias(id) ON DELETE SET NULL
 );
 ```
