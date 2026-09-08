@@ -38,6 +38,8 @@ CREATE TABLE noticias(
 );
 ```
 
+## INSERT na tabela usuários
+
 ```sql
 -- Usuarios
 INSERT INTO `usuarios`(`nome`, `email`, `senha`, `tipo`) VALUES (
@@ -58,11 +60,20 @@ INSERT INTO `usuarios`(`nome`, `email`, `senha`, `tipo`) VALUES (
     '789xyz',
     'editor');
 
+```
+
+## INSERT na tabela categorias
+
+```sql
 -- Categorias
 INSERT INTO `categorias`(`nome`) VALUES ('Tecnologia');
 INSERT INTO `categorias`(`nome`) VALUES ('Educação');
 INSERT INTO `categorias`(`nome`) VALUES ('Entretenimento');
+```
 
+## INSERT na tabela noticias
+
+```sql
 -- Noticias
 INSERT INTO `noticias`(`titulo`, `resumo`, `texto`, `imagem`, `data`, `destaque`, `usuario_id`, `categoria_id`) VALUES (
     'Inteligência artificial ganha espaço no dia a dia',
