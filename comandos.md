@@ -119,3 +119,14 @@ UPDATE lojas_produtos SET estoque = 4 WHERE loja_id = 2 AND produto_id = 1;
 -- OR -> OU
 -- NOT -> NÃO
 ```
+
+## DELETE na tabela produtos
+
+```sql
+DELETE FROM produtos WHERE id = 2;
+```
+## DELETE na tabela fornecedores
+
+```sql
+DELETE FROM fornecedores WHERE id = 5;
+```
