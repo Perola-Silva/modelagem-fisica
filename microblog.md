@@ -122,3 +122,24 @@ INSERT INTO `noticias`(`titulo`, `resumo`, `texto`, `imagem`, `data`, `destaque`
     '3' -- Entertenimento
 );
 ```
+
+```sql
+UPDATE usuarios SET
+    nome = 'Tiago Messias', 
+    tipo = 'admin' 
+WHERE id = 3;
+
+UPDATE categorias SET nome = 'Baboseira' WHERE id = 3;
+
+UPDATE noticias SET 
+	titulo = 'Baboseira ae',
+    destaque = 'sim',
+    categoria_id = 1
+WHERE id = 3;
+
+DELETE FROM noticias WHERE id = 4;
+
+DELETE FROM categorias WHERE id = 3;
+
+DELETE FROM usuarios WHERE id = 3;
+```
