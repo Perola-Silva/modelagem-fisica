@@ -37,8 +37,22 @@ O `WHERE` permite determinar **Quais registros devem aparecer** no resultado. Na
 SELECT * FROM produtos WHERE quantidade = 0;
 ```
 
-### Comparação de maior/menor
+### Comparação de maior
 
 ```sql
 SELECT nome, preco FROM produtos WHERE preco > 1000;
+```
+
+### Comparação de menor ou igual
+
+```sql
+SELECT nome, preco FROM produtos WHERE preco <= 1000;
+```
+
+### Comparação de diferença
+
+Normalmente se usa o operador `<>` em vez do `!=`.
+
+```sql
+SELECT * FROM produtos WHERE fornecedor_id <> 1;
 ```
