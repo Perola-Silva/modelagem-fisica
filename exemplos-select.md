@@ -90,3 +90,30 @@ SELECT nome, preco, quantidade FROM produtos
 WHERE NOT preco > 1000;
 ```
 
+### BETWEEN
+
+Exibir produtos com preço **entre 100 e 500**.
+
+```sql
+SELECT nome, preco FROM produtos 
+WHERE preco BETWEEN 100 AND 500;
+```
+
+### IN 
+
+Exibir produtos que tenha o fornecedor ID 1, 4 ou 8.
+
+```sql
+SELECT * FROM produtos
+WHERE fornecedor_id IN (1, 4, 8); -- Lista de valores
+```
+
+Sem usar o `IN`, teriamos que fazer a lógica ccom múltiplos `OR`:
+
+```sql
+SELECT * FROM produtos
+WHERE 
+fornecedor_id = 1 OR 
+fornecedor_id = 4 OR 
+fornecedor_id = 8;
+```
